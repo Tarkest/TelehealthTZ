@@ -1,4 +1,4 @@
-export interface NetworkMovieForList {
+export interface Movie {
   Title: string;
   Year: string;
   imdbID: string;
@@ -6,7 +6,7 @@ export interface NetworkMovieForList {
   Poster: string;
 }
 
-export type GetMovieResponse = NetworkMovieForList & {
+export type GetMovieResponse = Movie & {
   Rated: string;
   Plot: string;
   Metascore: string;
@@ -14,6 +14,6 @@ export type GetMovieResponse = NetworkMovieForList & {
 };
 
 export interface GetMoviesResponse {
-  Search: NetworkMovieForList[];
+  Search: Movie[];
   totalResults: string;
 }

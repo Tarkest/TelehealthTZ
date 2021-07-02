@@ -1,11 +1,6 @@
-export interface Movie {
-  Title: string;
-  Poster: string;
-  imdbID: string;
-  Year: string;
-}
+import {Movie} from '../../../utils/api/types';
 
-export interface MovieReducerState {
+export interface MoviesReducerState {
   moviesListLoading: boolean;
   movies: Movie[];
   moviesSearch: string;

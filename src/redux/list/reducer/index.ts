@@ -1,18 +1,18 @@
 import {MovieListActionType, MovieListActionTypes} from '../actions/types';
-import {MovieReducerState} from './types';
+import {MoviesReducerState} from './types';
 
-const initialMovieListReducerState: MovieReducerState = {
+const initialMovieListReducerState: MoviesReducerState = {
   movies: [],
   moviesListLoading: false,
   moviesSearch: '',
-  movieListError: '',
+  movieListError: undefined,
 };
 
 export const movieListReducer = (
-  state: MovieReducerState = initialMovieListReducerState,
+  state: MoviesReducerState = initialMovieListReducerState,
   action: MovieListActionType,
 ) => {
-  let newState: MovieReducerState;
+  let newState: MoviesReducerState;
 
   switch (action.type) {
     case MovieListActionTypes.GET_MOVIES_BEGIN:
