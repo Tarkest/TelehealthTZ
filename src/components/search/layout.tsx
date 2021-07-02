@@ -1,19 +1,14 @@
-import {StyleSheet} from 'react-native';
+import React from 'react';
+import {SearchProps} from './types';
+import {styles} from './styles';
+import {View, TextInput} from 'react-native';
 
-export const styles = StyleSheet.create({
-  container: {
-    borderRadius: 50,
-    height: 42,
-    marginVertical: 10,
-    marginHorizontal: 10,
-    backgroundColor: 'black',
-  },
-  input: {
-    fontSize: 15,
-    lineHeight: 18,
-    height: 22,
-    flex: 1,
-    color: 'white',
-    marginHorizontal: 15,
-  },
-});
+const SearchLayout: React.FC<SearchProps> = ({onChange, value}) => {
+  return (
+    <View style={styles.container}>
+      <TextInput style={styles.input} onChangeText={onChange} value={value} />
+    </View>
+  );
+};
+
+export default React.memo(SearchLayout);

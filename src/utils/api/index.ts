@@ -1,7 +1,7 @@
 import axios from 'axios';
 import {GetMoviesResponse, GetMovieResponse} from './types';
 
-const baseUrl = 'http://www.omdbapi.com';
+const baseUrl = 'https://www.omdbapi.com';
 
 const apikey = 'f1f91343';
 
