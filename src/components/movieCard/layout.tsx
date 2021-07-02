@@ -1,9 +1,9 @@
 import React from 'react';
 import {Image, Text, View, TouchableHighlight} from 'react-native';
 import {styles} from './style';
-import {FilmCardLayoutProps} from './types';
+import {MovieCardLayoutProps} from './types';
 
-const FilmCardLayout: React.FC<FilmCardLayoutProps> = ({
+const MovieCardLayout: React.FC<MovieCardLayoutProps> = ({
   posterUrl,
   title,
   year,
@@ -34,4 +34,4 @@ const FilmCardLayout: React.FC<FilmCardLayoutProps> = ({
   );
 };
 
-export default React.memo(FilmCardLayout);
+export default React.memo(MovieCardLayout);

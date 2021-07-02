@@ -1,12 +1,12 @@
 import React from 'react';
-import {FilmsList} from '../components/filmList';
+import {MoviesList} from '../components/movieList';
 import {Search} from '../components/search';
 
 export const HomeScreen: React.FC = () => {
   return (
     <>
       <Search />
-      <FilmsList />
+      <MoviesList />
     </>
   );
 };

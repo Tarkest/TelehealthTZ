@@ -1,5 +1,5 @@
-import {FilmReducerState} from './list/reducer/types';
+import {MovieReducerState} from './list/reducer/types';
 
 export type StoreType = {
-  filmListReducer: FilmReducerState;
+  movieListReducer: MovieReducerState;
 };

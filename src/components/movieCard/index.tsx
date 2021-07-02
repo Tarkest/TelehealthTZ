@@ -1,11 +1,11 @@
 import React from 'react';
-import {FilmCardProps} from './types';
+import {MovieCardProps} from './types';
 import Layout from './layout';
 import {useNavigation} from '@react-navigation/native';
 import {useCallback} from 'react';
 import {MainRouteNavigation} from '../../navigation/main/types';
 
-const FilmCard: React.FC<FilmCardProps> = ({
+const MovieCard: React.FC<MovieCardProps> = ({
   title,
   year,
   posterUrl,
@@ -22,4 +22,4 @@ const FilmCard: React.FC<FilmCardProps> = ({
   );
 };
 
-export default FilmCard;
+export default MovieCard;

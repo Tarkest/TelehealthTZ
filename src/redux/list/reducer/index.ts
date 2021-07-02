@@ -1,52 +1,52 @@
-import {FilmListActionType, FilmListActionTypes} from '../actions/types';
-import {FilmReducerState} from './types';
+import {MovieListActionType, MovieListActionTypes} from '../actions/types';
+import {MovieReducerState} from './types';
 
-const initialFilmListReducerState: FilmReducerState = {
-  films: [],
-  filmsListLoading: false,
-  filmsSearch: '',
-  filmListError: '',
+const initialMovieListReducerState: MovieReducerState = {
+  movies: [],
+  moviesListLoading: false,
+  moviesSearch: '',
+  movieListError: '',
 };
 
-export const filmListReducer = (
-  state: FilmReducerState = initialFilmListReducerState,
-  action: FilmListActionType,
+export const movieListReducer = (
+  state: MovieReducerState = initialMovieListReducerState,
+  action: MovieListActionType,
 ) => {
-  let newState: FilmReducerState;
+  let newState: MovieReducerState;
 
   switch (action.type) {
-    case FilmListActionTypes.GET_FILMS_BEGIN:
+    case MovieListActionTypes.GET_MOVIES_BEGIN:
       newState = {
         ...state,
-        filmsListLoading: true,
+        moviesListLoading: true,
       };
 
       return newState;
 
-    case FilmListActionTypes.GET_FILMS_SUCCESS:
+    case MovieListActionTypes.GET_MOVIES_SUCCESS:
       newState = {
         ...state,
-        filmsListLoading: false,
-        films: action.payload.Search,
+        moviesListLoading: false,
+        movies: action.payload.Search,
       };
 
-      delete newState.filmListError;
+      delete newState.movieListError;
 
       return newState;
 
-    case FilmListActionTypes.GET_FILMS_FAILED:
+    case MovieListActionTypes.GET_MOVIES_FAILED:
       newState = {
         ...state,
-        filmsListLoading: false,
-        filmListError: action.payload,
+        moviesListLoading: false,
+        movieListError: action.payload,
       };
 
       return newState;
 
-    case FilmListActionTypes.UPDATE_FILMS_SEARCH:
+    case MovieListActionTypes.UPDATE_MOVIES_SEARCH:
       newState = {
         ...state,
-        filmsSearch: action.payload,
+        moviesSearch: action.payload,
       };
 
       return newState;

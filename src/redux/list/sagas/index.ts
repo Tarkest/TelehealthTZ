@@ -1,21 +1,21 @@
-import {getFilmsFailed, getFilmsBegin} from './../actions/index';
+import {getMoviesFailed, getMoviesBegin} from './../actions/index';
 import {call, put} from 'redux-saga/effects';
-import {getFilmsList} from '../../../utils/api';
-import {getFilmsSuccess} from '../actions';
-import {GetFilmsBegin, UpdateFilmsSearch} from '../actions/types';
-import {FetchFilmListGeneratorType} from './types';
+import {getMoviesList} from '../../../utils/api';
+import {getMoviesSuccess} from '../actions';
+import {GetMoviesBegin, UpdateMoviesSearch} from '../actions/types';
+import {FetchMovieListGeneratorType} from './types';
 
-export function* fetchFilmListSaga(
-  action: GetFilmsBegin,
-): FetchFilmListGeneratorType {
+export function* fetchMovieListSaga(
+  action: GetMoviesBegin,
+): FetchMovieListGeneratorType {
   try {
-    const res = yield call(getFilmsList, action.payload);
-    yield put(getFilmsSuccess(res.data));
+    const res = yield call(getMoviesList, action.payload);
+    yield put(getMoviesSuccess(res.data));
   } catch (error) {
-    yield put(getFilmsFailed(error));
+    yield put(getMoviesFailed(error));
   }
 }
 
-export function* updateFilmsSearchSaga(action: UpdateFilmsSearch) {
-  yield put(getFilmsBegin(action.payload));
+export function* updateMoviesSearchSaga(action: UpdateMoviesSearch) {
+  yield put(getMoviesBegin(action.payload));
 }

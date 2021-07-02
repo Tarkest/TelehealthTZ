@@ -1,30 +1,30 @@
-import {GetFilmsResponse} from '../../../utils/api/types';
+import {GetMoviesResponse} from '../../../utils/api/types';
 import {
-  FilmListActionTypes,
-  GetFilmsBegin,
-  GetFilmsSuccess,
-  GetFilmsFailed,
-  UpdateFilmsSearch,
+  MovieListActionTypes,
+  GetMoviesBegin,
+  GetMoviesSuccess,
+  GetMoviesFailed,
+  UpdateMoviesSearch,
 } from './types';
 
-export const getFilmsBegin = (search?: string): GetFilmsBegin => ({
-  type: FilmListActionTypes.GET_FILMS_BEGIN,
+export const getMoviesBegin = (search?: string): GetMoviesBegin => ({
+  type: MovieListActionTypes.GET_MOVIES_BEGIN,
   payload: search,
 });
 
-export const getFilmsSuccess = (
-  payload: GetFilmsResponse,
-): GetFilmsSuccess => ({
-  type: FilmListActionTypes.GET_FILMS_SUCCESS,
+export const getMoviesSuccess = (
+  payload: GetMoviesResponse,
+): GetMoviesSuccess => ({
+  type: MovieListActionTypes.GET_MOVIES_SUCCESS,
   payload,
 });
 
-export const getFilmsFailed = (errorMessage: string): GetFilmsFailed => ({
-  type: FilmListActionTypes.GET_FILMS_FAILED,
+export const getMoviesFailed = (errorMessage: string): GetMoviesFailed => ({
+  type: MovieListActionTypes.GET_MOVIES_FAILED,
   payload: errorMessage,
 });
 
-export const updateFilmsSearch = (searchText: string): UpdateFilmsSearch => ({
-  type: FilmListActionTypes.UPDATE_FILMS_SEARCH,
+export const updateMoviesSearch = (searchText: string): UpdateMoviesSearch => ({
+  type: MovieListActionTypes.UPDATE_MOVIES_SEARCH,
   payload: searchText,
 });

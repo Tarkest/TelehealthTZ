@@ -1,15 +1,15 @@
 import axios from 'axios';
-import {GetFilmsResponse} from './types';
+import {GetMoviesResponse, GetMovieResponse} from './types';
 
 const baseUrl = 'http://www.omdbapi.com';
 
 const apikey = 'f1f91343';
 
-export const getFilmsList = async (
+export const getMoviesList = async (
   searchText?: string,
   currentPage?: number,
 ) => {
-  return await axios.get<GetFilmsResponse>(baseUrl, {
+  return await axios.get<GetMoviesResponse>(baseUrl, {
     params: {
       apikey,
       s: searchText && searchText.length > 0 ? searchText : 'Star Wars',
@@ -19,11 +19,12 @@ export const getFilmsList = async (
   });
 };
 
-export const getFilm = async (filmId: string) => {
-  return await axios.get(baseUrl, {
+export const getMovieById = async (movieId: string) => {
+  return await axios.get<GetMovieResponse>(baseUrl, {
     params: {
       apikey,
-      i: filmId,
+      i: movieId,
+      plot: 'full',
     },
   });
 };

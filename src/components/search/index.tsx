@@ -2,7 +2,7 @@ import React from 'react';
 import {useCallback} from 'react';
 import {TextInput, View} from 'react-native';
 import {useDispatch, useSelector} from 'react-redux';
-import {updateFilmsSearch} from '../../redux/list/actions';
+import {updateMoviesSearch} from '../../redux/list/actions';
 import {searchSelector} from '../../redux/list/selectors';
 import {styles} from './layout';
 
@@ -12,7 +12,7 @@ export const Search: React.FC = () => {
   const dispatch = useDispatch();
 
   const onChange = useCallback((value: string) => {
-    dispatch(updateFilmsSearch(value));
+    dispatch(updateMoviesSearch(value));
   }, []);
 
   return (

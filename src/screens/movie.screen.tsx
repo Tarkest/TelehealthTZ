@@ -1,5 +1,5 @@
 import React from 'react';
-import {FilmsList} from '../components/filmList';
+import {MoviesList} from '../components/movieList';
 import {Search} from '../components/search';
 import {MovieScreenProps} from '../navigation/main/types';
 

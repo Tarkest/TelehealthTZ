@@ -1,35 +1,35 @@
-import {GetFilmsResponse} from '../../../utils/api/types';
+import {GetMoviesResponse} from '../../../utils/api/types';
 import {AnyAction} from 'redux';
 
-export enum FilmListActionTypes {
-  GET_FILMS_BEGIN = 'GET_FILMS_BEGIN',
-  GET_FILMS_SUCCESS = 'GET_FILMS_SUCCESS',
-  GET_FILMS_FAILED = 'GET_FILMS_FAILED',
-  UPDATE_FILMS_SEARCH = 'UPDATE_FILMS_SEARCH',
+export enum MovieListActionTypes {
+  GET_MOVIES_BEGIN = 'GET_MOVIES_BEGIN',
+  GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS',
+  GET_MOVIES_FAILED = 'GET_MOVIES_FAILED',
+  UPDATE_MOVIES_SEARCH = 'UPDATE_MOVIES_SEARCH',
 }
 
-export interface GetFilmsBegin extends AnyAction {
-  type: typeof FilmListActionTypes.GET_FILMS_BEGIN;
+export interface GetMoviesBegin extends AnyAction {
+  type: typeof MovieListActionTypes.GET_MOVIES_BEGIN;
   payload?: string;
 }
 
-export interface GetFilmsSuccess extends AnyAction {
-  type: typeof FilmListActionTypes.GET_FILMS_SUCCESS;
-  payload: GetFilmsResponse;
+export interface GetMoviesSuccess extends AnyAction {
+  type: typeof MovieListActionTypes.GET_MOVIES_SUCCESS;
+  payload: GetMoviesResponse;
 }
 
-export interface GetFilmsFailed extends AnyAction {
-  type: typeof FilmListActionTypes.GET_FILMS_FAILED;
+export interface GetMoviesFailed extends AnyAction {
+  type: typeof MovieListActionTypes.GET_MOVIES_FAILED;
   payload: string;
 }
 
-export interface UpdateFilmsSearch extends AnyAction {
-  type: typeof FilmListActionTypes.UPDATE_FILMS_SEARCH;
+export interface UpdateMoviesSearch extends AnyAction {
+  type: typeof MovieListActionTypes.UPDATE_MOVIES_SEARCH;
   payload: string;
 }
 
-export type FilmListActionType =
-  | GetFilmsBegin
-  | GetFilmsSuccess
-  | GetFilmsFailed
-  | UpdateFilmsSearch;
+export type MovieListActionType =
+  | GetMoviesBegin
+  | GetMoviesSuccess
+  | GetMoviesFailed
+  | UpdateMoviesSearch;

@@ -2,19 +2,26 @@ import {StoreType} from '../types';
 import {createSelector} from 'reselect';
 
 export const searchSelector = (store: StoreType) =>
-  store.filmListReducer.filmsSearch;
+  store.movieListReducer.moviesSearch;
 
-export const filmListSelector = (store: StoreType) =>
-  store.filmListReducer.films;
+export const movieListSelector = (store: StoreType) =>
+  store.movieListReducer.movies;
 
-export const filmsListLoading = (store: StoreType) =>
-  store.filmListReducer.filmsListLoading;
+export const moviesListLoading = (store: StoreType) =>
+  store.movieListReducer.moviesListLoading;
 
-export const filmsListError = (store: StoreType) =>
-  store.filmListReducer.filmListError;
+export const moviesListError = (store: StoreType) =>
+  store.movieListReducer.movieListError;
 
-export const filmsListErrorSelector = createSelector(
-  filmsListLoading,
-  filmsListError,
+export const moviesListErrorSelector = createSelector(
+  moviesListLoading,
+  moviesListError,
   (loading, error) => (!loading && error ? error : undefined),
+);
+
+export const moviesListToManyResultsSelector = createSelector(
+  movieListSelector,
+  moviesListLoading,
+  moviesListError,
+  (movies, loading, error) => (!movies && !loading && !error ? true : false),
 );
