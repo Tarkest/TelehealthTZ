@@ -4,9 +4,15 @@ import {fetchMovieListSaga, updateMoviesSearchSaga} from './list/sagas';
 import {fetchMovieSaga} from './movie/sagas';
 import {MovieActionTypes} from './movie/actions/types';
 
+const listFetchThrotteDelay = 1000;
+
 function* rootSaga() {
   yield all([
-    throttle(1000, MovieListActionTypes.GET_MOVIES_BEGIN, fetchMovieListSaga),
+    throttle(
+      listFetchThrotteDelay,
+      MovieListActionTypes.GET_MOVIES_BEGIN,
+      fetchMovieListSaga,
+    ),
     takeLatest(
       MovieListActionTypes.UPDATE_MOVIES_SEARCH,
       updateMoviesSearchSaga,
