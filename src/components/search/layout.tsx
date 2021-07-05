@@ -6,7 +6,13 @@ import {View, TextInput} from 'react-native';
 const SearchLayout: React.FC<SearchProps> = ({onChange, value}) => {
   return (
     <View style={styles.container}>
-      <TextInput style={styles.input} onChangeText={onChange} value={value} />
+      <TextInput
+        style={styles.input}
+        onChangeText={onChange}
+        value={value}
+        placeholder="Search for a movie"
+        placeholderTextColor="grey"
+      />
     </View>
   );
 };
