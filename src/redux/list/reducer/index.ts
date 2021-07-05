@@ -21,6 +21,8 @@ export const movieListReducer = (
         moviesListLoading: true,
       };
 
+      delete newState.movieListError;
+
       return newState;
 
     case MovieListActionTypes.GET_MOVIES_SUCCESS:

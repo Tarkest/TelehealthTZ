@@ -20,6 +20,8 @@ export const movieReducer = (
         movieLoading: true,
       };
 
+      delete newState.movieGetError;
+
       return newState;
 
     case MovieActionTypes.GET_MOVIE_SUCCESS:
