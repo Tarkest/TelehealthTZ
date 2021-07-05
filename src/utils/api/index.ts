@@ -1,17 +1,12 @@
-import axios from 'axios';
-import {GetMoviesResponse, GetMovieResponse} from './types';
-
-const baseUrl = 'https://www.omdbapi.com';
-
-const apikey = 'f1f91343';
+import AxiosInstance from './instance';
+import {GetMovieResponse, GetMoviesResponse} from './types';
 
 export const getMoviesList = async (
   searchText?: string,
   currentPage?: number,
 ) => {
-  return await axios.get<GetMoviesResponse>(baseUrl, {
+  return await AxiosInstance.get<GetMoviesResponse>('', {
     params: {
-      apikey,
       s: searchText && searchText.length > 0 ? searchText : 'Star Wars',
       page: currentPage ?? 1,
       type: 'movie',
@@ -20,9 +15,8 @@ export const getMoviesList = async (
 };
 
 export const getMovieById = async (movieId: string) => {
-  return await axios.get<GetMovieResponse>(baseUrl, {
+  return await AxiosInstance.get<GetMovieResponse>('', {
     params: {
-      apikey,
       i: movieId,
       plot: 'full',
     },
