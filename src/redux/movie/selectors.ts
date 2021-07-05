@@ -9,7 +9,7 @@ export const movieLoading = (store: StoreType) =>
 export const movieGetError = (store: StoreType) =>
   store.movieReducer.movieGetError;
 
-export const moviesListErrorSelector = createSelector(
+export const movieErrorSelector = createSelector(
   movieLoading,
   movieGetError,
   (loading, error) => (!loading && error ? error : undefined),

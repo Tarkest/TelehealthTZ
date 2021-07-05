@@ -1,10 +1,7 @@
 import {StyleSheet} from 'react-native';
 
 export const styles = StyleSheet.create({
-  list: {
+  activityIndicator: {
     flex: 1,
-  },
-  content: {
-    marginHorizontal: 10,
   },
 });

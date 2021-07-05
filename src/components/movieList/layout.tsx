@@ -1,7 +1,8 @@
 import React from 'react';
-import {ListRenderItem, ActivityIndicator, FlatList, Text} from 'react-native';
+import {ListRenderItem, FlatList, Text} from 'react-native';
 import {Movie} from '../../utils/api/types';
 import MovieCard from '../movieCard';
+import {LoadingIndicator} from '../shared/loadingIndicator';
 import {styles} from './style';
 import {MovieListProps} from './types';
 
@@ -20,8 +21,7 @@ const MoviesListLayout: React.FC<MovieListProps> = ({
 
   if (toManyResults) return <Text>Add more info to search, please</Text>;
 
-  if (loading)
-    return <ActivityIndicator style={styles.activityIndicator} size="large" />;
+  if (loading) return <LoadingIndicator />;
 
   return (
     <FlatList

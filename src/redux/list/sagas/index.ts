@@ -12,7 +12,7 @@ export function* fetchMovieListSaga(
     const res = yield call(getMoviesList, action.payload);
     yield put(getMoviesSuccess(res.data));
   } catch (error) {
-    yield put(getMoviesFailed(error));
+    yield put(getMoviesFailed(error.message));
   }
 }
 

@@ -11,6 +11,6 @@ export function* fetchMovieSaga(
     const res = yield call(getMovieById, action.payload);
     yield put(getMovieSuccess(res.data));
   } catch (error) {
-    yield put(getMovieFailed(error));
+    yield put(getMovieFailed(error.message));
   }
 }
